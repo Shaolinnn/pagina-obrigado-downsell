@@ -18,13 +18,27 @@
     <link rel="dns-prefetch" href="https://scripts.converteai.net">
     <link rel="dns-prefetch" href="https://images.converteai.net">
     <link rel="dns-prefetch" href="https://api.vturb.com.br">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-583505601"></script>
+    <script type="text/javascript">
+      (function() {
+        var mt = document.createElement("script"); mt.type = "text/javascript"; mt.async = true;
+        mt.src = "https://t.contentsquare.net/uxa/8b9c231da4716.js";
+        document.getElementsByTagName("head")[0].appendChild(mt);
+      })();
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0YYSYX9YH"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+        
+        // Configuração do Google Analytics 4 (Vindo do seu layout.tsx)
+        gtag('config', 'G-D0YYSYX9YH'); 
+        
+        // Configuração do Google Ads (Já existente)
         gtag('config', 'AW-583505601', { transport_type: 'beacon' });
     </script>
+
     <script>
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -37,6 +51,7 @@
         fbq('init', '575682733921732');
         fbq('track', 'PageView');
     </script>
+    
     <style>
         :root {
             --cor-primaria: #FF7A00; --cor-secundaria: #2ECC71; --cor-secundaria-hover: #27AE60;
@@ -97,7 +112,16 @@
         
         /* Área do Hotmart */
         .cta-section { background-color: var(--cor-dark-fundo); padding-bottom: 80px; padding-top: 20px; }
-        .offer-card { background: white; border-radius: 20px; padding: 40px; max-width: 700px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+        
+        /* CORREÇÃO DO CARD NO MOBILE */
+        .offer-card { 
+            background: white; 
+            border-radius: 20px; 
+            padding: 40px; 
+            max-width: 700px; 
+            margin: 0 auto; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3); 
+        }
         
         footer { background-color: var(--cor-dark-fundo); color: #9CA3AF; padding: 40px 0; text-align: center; border-top: 1px solid #1F2937; }
         
@@ -106,13 +130,12 @@
             section { padding: 60px 0; }
             .header h1 { flex-direction: row; gap: 10px; } .header i { font-size: 1.8rem; }
             
-            /* CORREÇÃO AQUI: Ajuste para o card não vazar no mobile */
             .offer-card { 
                 padding: 20px; 
                 max-width: 100%; 
-                overflow: hidden; /* Garante que nada passe dos limites do cartão */
-                width: 100%; /* Força a ocupar toda a largura disponível */
-                box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+                overflow: hidden; 
+                width: 100%; 
+                box-sizing: border-box; 
             }
             
             .access-badge { font-size: 0.9rem; padding: 6px 15px; }
@@ -155,12 +178,11 @@
         <div class="container">
             <div class="offer-card">
                 <div id="hotmart-sales-funnel"></div>
-
                 <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
                 <script>
                 checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
                 </script>
-                </div>
+            </div>
         </div>
     </section>
     
