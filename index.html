@@ -105,7 +105,16 @@
             h1, .header h1 { font-size: 1.8rem; } .section-main-title { font-size: 2.2rem; } .discount-text { font-size: 3rem; }
             section { padding: 60px 0; }
             .header h1 { flex-direction: row; gap: 10px; } .header i { font-size: 1.8rem; }
-            .offer-card { padding: 30px 20px; max-width: 95%; }
+            
+            /* CORREÇÃO AQUI: Ajuste para o card não vazar no mobile */
+            .offer-card { 
+                padding: 20px; 
+                max-width: 100%; 
+                overflow: hidden; /* Garante que nada passe dos limites do cartão */
+                width: 100%; /* Força a ocupar toda a largura disponível */
+                box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+            }
+            
             .access-badge { font-size: 0.9rem; padding: 6px 15px; }
         }
     </style>
