@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async></script>
-
     <script async src="https://t.contentsquare.net/uxa/8b9c231da4716.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0YYSYX9YH"></script>
@@ -20,35 +19,21 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        // Configurações de Consentimento
-        gtag('consent', 'default', {
-            ad_storage: 'denied',
-            ad_user_data: 'denied',
-            ad_personalization: 'denied',
-            analytics_storage: 'granted'
-        });
-
-        // Configuração do GA4
+        // Configuração Global GA4
         gtag('config', 'G-D0YYSYX9YH', {
             transport_type: 'beacon',
             anonymize_ip: true,
-            allow_ad_personalization_signals: false,
-            allow_google_signals: false,
-            debug_mode: true,
-            linker: {
-                domains: [
-                    "destruindoasquestoes.com.br",
-                    "www.destruindoasquestoes.com.br",
-                    "bit.ly",
-                    "l.wl.co",
-                    "hotmart.com"
-                ],
-                decoration: 'linker'
-            }
+            linker: { domains: ["destruindoasquestoes.com.br", "hotmart.com"] }
         });
-
-        // Configuração do Google Ads
+        
+        // Configuração Global Google Ads
         gtag('config', 'AW-583505601', { transport_type: 'beacon' });
+    </script>
+    <script>
+      gtag('event', 'conversion', {
+          'send_to': 'AW-583505601/VgAvCOn24vYZEMGtnpYC', 
+          'transaction_id': ''
+      });
     </script>
 
     <script>
@@ -86,12 +71,14 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         section { padding: 80px 0; text-align: center; }
         h1, h2, h3 { font-weight: 700; line-height: 1.3; }
-        h1 { font-size: 3rem; font-weight: 800; } h2 { font-size: 2.6rem; font-weight: 800; margin-bottom: 20px; }
+        h1 { font-size: 2.2rem; font-weight: 800; } /* Ajustei tamanho fonte mobile */
+        h2 { font-size: 2.6rem; font-weight: 800; margin-bottom: 20px; }
         p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
         
         /* Header de Urgência (Vermelho) */
         .header { background: var(--cor-vermelha); color: white; padding: 3rem 0; text-align: center; }
-        .header h1 { color: white; display: flex; align-items: center; justify-content: center; gap: 15px; text-align: center; text-transform: uppercase; letter-spacing: 1px; }
+        /* Removi text-transform: uppercase para respeitar a frase dela */
+        .header h1 { color: white; display: flex; align-items: center; justify-content: center; gap: 15px; text-align: center; letter-spacing: 0.5px; }
         .header i { font-size: 2.5rem; }
 
         /* Seção da VSL */
@@ -134,7 +121,7 @@
         /* Área do Hotmart */
         .cta-section { background-color: var(--cor-dark-fundo); padding-bottom: 80px; padding-top: 20px; }
         
-        /* CARD RESPONSIVO (CORRIGIDO) */
+        /* CARD RESPONSIVO */
         .offer-card { 
             background: white; 
             border-radius: 20px; 
@@ -146,8 +133,24 @@
         
         footer { background-color: var(--cor-dark-fundo); color: #9CA3AF; padding: 40px 0; text-align: center; border-top: 1px solid #1F2937; }
         
+        /* --- ESTILOS DO DELAY --- */
+        .delay-oculto {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        .delay-visivel {
+            display: block;
+            animation: fadeIn 1.5s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
         @media (max-width: 768px) {
-            h1, .header h1 { font-size: 1.8rem; } .section-main-title { font-size: 2.2rem; } .discount-text { font-size: 3rem; }
+            h1, .header h1 { font-size: 1.5rem; } /* Ajustado para caber a frase longa no celular */
+            .section-main-title { font-size: 2.2rem; } .discount-text { font-size: 3rem; }
             section { padding: 60px 0; }
             .header h1 { flex-direction: row; gap: 10px; } .header i { font-size: 1.8rem; }
             
@@ -168,7 +171,7 @@
 
     <header class="header">
         <div class="container">
-            <h1><i class="fa-solid fa-circle-xmark"></i> SUA ÚLTIMA CHANCE!</h1>
+            <h1>Eu não costumo fazer isso. Mas algumas pessoas precisam de um atalho.</h1>
         </div>
     </header>
 
@@ -181,7 +184,7 @@
         </div>
     </section>
 
-    <section class="dark-section" style="padding-bottom: 20px;">
+    <section class="dark-section delay-oculto" style="padding-bottom: 20px;">
         <div class="container">
             <h2 class="section-main-title">ACELERADOR SPQ - Programa de Implementação Light</h2>
             
@@ -195,7 +198,7 @@
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section delay-oculto">
         <div class="container">
             <div class="offer-card">
                 <div id="hotmart-sales-funnel"></div>
@@ -207,7 +210,7 @@
         </div>
     </section>
     
-    <footer>
+    <footer class="delay-oculto">
         <div class="container"><p>© 2025 DAQ Essencial. Todos os direitos reservados.</p><p style="margin-top: 10px;"><strong>Kyrlla Pattyelly</strong> – Auditora Fiscal • Criadora do SPQ</p></div>
     </footer>
     
@@ -218,6 +221,21 @@
         e=a.getElementsByTagName(u)[0];h.async=1;h.src=n;e.parentNode.insertBefore(h,e)
         })(window,document,'script','//launcher.hotmart.com/launcher.js','hot');
         hot('account','724d6454-843f-36de-9666-c2bc235cd7be');
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var tempoDelay = 55000; 
+
+            setTimeout(function() {
+                var elementosOcultos = document.querySelectorAll('.delay-oculto');
+                
+                elementosOcultos.forEach(function(elemento) {
+                    elemento.classList.remove('delay-oculto');
+                    elemento.classList.add('delay-visivel');
+                });
+            }, tempoDelay);
+        });
     </script>
 </body>
 </html>
